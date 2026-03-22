@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-body);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-headline);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,75 +46,74 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Ounje custom colors */
+  --color-ounje-primary-container: var(--ounje-primary-container);
+  --color-ounje-on-primary-container: var(--ounje-on-primary-container);
+  --color-ounje-secondary-container: var(--ounje-secondary-container);
+  --color-ounje-on-secondary-fixed: var(--ounje-on-secondary-fixed);
+  --color-ounje-secondary-fixed: var(--ounje-secondary-fixed);
+  --color-ounje-tertiary-fixed: var(--ounje-tertiary-fixed);
+  --color-ounje-on-tertiary-fixed: var(--ounje-on-tertiary-fixed);
+  --color-ounje-surface-container: var(--ounje-surface-container);
+  --color-ounje-surface-container-low: var(--ounje-surface-container-low);
+  --color-ounje-surface-container-high: var(--ounje-surface-container-high);
+  --color-ounje-primary-fixed: var(--ounje-primary-fixed);
+  --color-ounje-on-surface-variant: var(--ounje-on-surface-variant);
+  --color-ounje-outline-variant: var(--ounje-outline-variant);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  --background: #ebfeeb;
+  --foreground: #101f13;
+  --card: #ffffff;
+  --card-foreground: #101f13;
+  --popover: #ffffff;
+  --popover-foreground: #101f13;
+  --primary: #004317;
+  --primary-foreground: #ffffff;
+  --secondary: #904d00;
+  --secondary-foreground: #ffffff;
+  --muted: #e6f9e6;
+  --muted-foreground: #40493f;
+  --accent: #d5e7d5;
+  --accent-foreground: #40493f;
+  --destructive: #ba1a1a;
+  --border: #c0c9bc;
+  --input: #c0c9bc;
+  --ring: #004317;
+  --chart-1: #004317;
+  --chart-2: #904d00;
+  --chart-3: #004410;
+  --chart-4: #1a5c2a;
+  --chart-5: #ff9325;
+  --radius: 0.75rem;
+  --sidebar: #e6f9e6;
+  --sidebar-foreground: #101f13;
+  --sidebar-primary: #004317;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d5e7d5;
+  --sidebar-accent-foreground: #40493f;
+  --sidebar-border: #c0c9bc;
+  --sidebar-ring: #004317;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Ounje-specific Material Design 3 tokens */
+  --ounje-primary-container: #1a5c2a;
+  --ounje-on-primary-container: #8fd394;
+  --ounje-secondary-container: #ff9325;
+  --ounje-on-secondary-fixed: #2e1500;
+  --ounje-secondary-fixed: #ffdcc3;
+  --ounje-tertiary-fixed: #98f996;
+  --ounje-on-tertiary-fixed: #002205;
+  --ounje-surface-container: #e0f3e0;
+  --ounje-surface-container-low: #e6f9e6;
+  --ounje-surface-container-high: #daedda;
+  --ounje-primary-fixed: #aef3b1;
+  --ounje-on-surface-variant: #40493f;
+  --ounje-outline-variant: #c0c9bc;
+
+  --font-body: "Be Vietnam Pro", sans-serif;
+  --font-headline: "Plus Jakarta Sans", sans-serif;
 }
 
 @layer base {
@@ -123,8 +122,43 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
   }
-  html {
-    @apply font-sans;
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-headline);
   }
+}
+
+/* Ounje custom utilities */
+.signature-gradient {
+  background: linear-gradient(135deg, #004317 0%, #1a5c2a 100%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee 40s linear infinite;
+}
+
+.phone-marquee {
+  animation: marquee 60s linear infinite;
+  width: max-content;
 }

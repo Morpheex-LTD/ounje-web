@@ -1,0 +1,37 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="mound-clip-iw">
+      <path d="M 22,72 Q 24,38 60,28 Q 96,38 98,72 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Bowl body — white -->
+  <path d="M 22,72 Q 18,108 60,110 Q 102,108 98,72 Z" fill="#FFFFFF"/>
+
+  <!-- Mound — white -->
+  <path d="M 22,72 Q 24,38 60,28 Q 96,38 98,72 Z" fill="#FFFFFF"/>
+
+  <!-- Grain seeds — green tint on white -->
+  <g clip-path="url(#mound-clip-iw)" fill="#1A5C2A" opacity="0.4">
+    <ellipse cx="44" cy="46" rx="3.2" ry="8.5" transform="rotate(-22 44 46)"/>
+    <ellipse cx="60" cy="41" rx="3.2" ry="8.5" transform="rotate(-2 60 41)"/>
+    <ellipse cx="76" cy="46" rx="3.2" ry="8.5" transform="rotate(20 76 46)"/>
+    <ellipse cx="32" cy="59" rx="3.2" ry="8.5" transform="rotate(-32 32 59)"/>
+    <ellipse cx="47" cy="56" rx="3.2" ry="8.5" transform="rotate(-18 47 56)"/>
+    <ellipse cx="61" cy="54" rx="3.2" ry="8.5" transform="rotate(-2 61 54)"/>
+    <ellipse cx="75" cy="56" rx="3.2" ry="8.5" transform="rotate(16 75 56)"/>
+    <ellipse cx="89" cy="60" rx="3.2" ry="8.5" transform="rotate(30 89 60)"/>
+    <ellipse cx="27" cy="68" rx="3.2" ry="8.5" transform="rotate(-35 27 68)"/>
+    <ellipse cx="41" cy="65" rx="3.2" ry="8.5" transform="rotate(-22 41 65)"/>
+    <ellipse cx="55" cy="63" rx="3.2" ry="8.5" transform="rotate(-8 55 63)"/>
+    <ellipse cx="69" cy="63" rx="3.2" ry="8.5" transform="rotate(6 69 63)"/>
+    <ellipse cx="83" cy="65" rx="3.2" ry="8.5" transform="rotate(20 83 65)"/>
+    <ellipse cx="95" cy="68" rx="3.2" ry="8.5" transform="rotate(32 95 68)"/>
+  </g>
+
+  <!-- Amber arrow -->
+  <polygon points="60,10 46,30 74,30" fill="#E07B00"/>
+
+  <!-- Amber base bar -->
+  <rect x="42" y="110" width="36" height="8" rx="4" fill="#E07B00"/>
+</svg>
