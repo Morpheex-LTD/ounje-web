@@ -1,0 +1,991 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ounje | The Smart Way to Stock Your Pantry</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#6e3900",
+              "secondary-container": "#ff9325",
+              primary: "#004317",
+              "tertiary-fixed-dim": "#7cdb7d",
+              background: "#ebfeeb",
+              "on-tertiary-fixed-variant": "#005315",
+              "on-tertiary-container": "#79d87a",
+              "surface-container-low": "#e6f9e6",
+              "primary-fixed": "#aef3b1",
+              "outline-variant": "#c0c9bc",
+              "on-secondary-fixed": "#2e1500",
+              "secondary-fixed-dim": "#ffb77c",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#ffdcc3",
+              "surface-tint": "#2a6b37",
+              "inverse-primary": "#93d697",
+              "surface-variant": "#d5e7d5",
+              "surface-bright": "#ebfeeb",
+              "surface-container": "#e0f3e0",
+              "primary-container": "#1a5c2a",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#98f996",
+              "tertiary-container": "#005e19",
+              "primary-fixed-dim": "#93d697",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#40493f",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              error: "#ba1a1a",
+              "on-tertiary-fixed": "#002205",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-background": "#101f13",
+              tertiary: "#004410",
+              surface: "#ebfeeb",
+              "on-primary-container": "#8fd394",
+              "on-surface": "#101f13",
+              "on-primary-fixed-variant": "#0c5221",
+              "on-primary-fixed": "#002108",
+              "inverse-surface": "#243427",
+              outline: "#717a6f",
+              secondary: "#904d00",
+              "on-secondary-container": "#663500",
+              "surface-dim": "#ccdfcc",
+              "surface-container-highest": "#d5e7d5",
+              "surface-container-high": "#daedda",
+              "inverse-on-surface": "#e3f6e3",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans"],
+              body: ["Be Vietnam Pro"],
+              label: ["Be Vietnam Pro"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .signature-gradient {
+        background: linear-gradient(135deg, #004317 0%, #1a5c2a 100%);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      body {
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      /* Custom Accordion Logic Styles */
+      .faq-item input:checked ~ .faq-content {
+        max-height: 500px;
+        opacity: 1;
+        padding-bottom: 1.5rem;
+      }
+      .faq-item input:checked ~ .faq-header .expand-icon {
+        transform: rotate(180deg);
+        background-color: #004317;
+        color: white;
+      }
+      .faq-item input:checked ~ .faq-header {
+        color: #004317;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background selection:bg-secondary-fixed selection:text-on-secondary-fixed"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#ebfeeb]/80 backdrop-blur-md shadow-[0_4px_32px_rgba(16,31,19,0.04)]"
+    >
+      <div
+        class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto"
+      >
+        <div class="text-2xl font-black text-[#004317] tracking-tight">
+          Ounje
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-[#004317] border-b-2 border-[#904d00] pb-1 font-bold"
+            href="#"
+            >Marketplace</a
+          >
+          <a
+            class="text-[#40493f] hover:text-[#004317] transition-colors font-medium"
+            href="#"
+            >How it Works</a
+          >
+          <a
+            class="text-[#40493f] hover:text-[#004317] transition-colors font-medium"
+            href="#"
+            >Categories</a
+          >
+        </div>
+        <div class="flex items-center gap-4">
+          <span
+            class="hidden md:flex items-center gap-2 bg-surface-container-lowest px-4 py-2 rounded-full shadow-sm border border-outline-variant/15"
+          >
+            <span class="text-secondary font-bold">₦</span>
+            <span class="font-bold text-on-surface">Get Credit</span>
+          </span>
+          <button class="md:hidden p-2 text-primary">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-24">
+      <!-- Hero Section -->
+      <section
+        class="max-w-7xl mx-auto px-6 py-12 md:py-24 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <div class="space-y-8">
+          <div
+            class="inline-flex items-center gap-2 bg-secondary-fixed px-4 py-1.5 rounded-full text-on-secondary-fixed font-bold text-sm"
+          >
+            <span
+              class="material-symbols-outlined text-sm"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >verified</span
+            >
+            Verified Salary Earners Only
+          </div>
+          <h1
+            class="text-5xl md:text-7xl font-extrabold text-primary leading-[1.1] tracking-tight"
+          >
+            The Smart Way to <span class="text-secondary">Stock</span> Your
+            Pantry.
+          </h1>
+          <p
+            class="text-on-surface-variant text-lg md:text-xl max-w-md leading-relaxed"
+          >
+            E kaabo! Experience a harvest of savings. Buy your bulk food items
+            today and pay when your salary lands. No stress, just fresh staples.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button
+              class="signature-gradient text-on-primary h-[56px] px-10 rounded-2xl font-bold text-lg hover:scale-[0.98] transition-transform shadow-lg shadow-primary/10"
+            >
+              Start Your Harvest
+            </button>
+            <button
+              class="bg-surface-container-lowest border border-outline-variant/20 h-[56px] px-8 rounded-2xl font-bold text-primary hover:bg-surface-container-low transition-colors"
+            >
+              View Marketplace
+            </button>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="aspect-square bg-primary-fixed/30 rounded-[3rem] absolute -inset-4 -rotate-3 -z-10"
+          ></div>
+          <img
+            alt="Nigerian food staples basket"
+            class="w-full aspect-square object-cover rounded-[2.5rem] shadow-2xl"
+            data-alt="Joyful basket filled with yams, grains, and fresh vegetables"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtx7hDouOPbYKgpQhICqznmF6XjiAh_X5eaKUWZf6lu3ae6PHtBDNLG6PX4p51zK14kq1ocr_k1QlkxsooqwEsAZKQr2sIpVavvTd-uWJkrWB2CgdQz2xISFjz-DGJkLn3uIYInkVaIi-fF7gbZp4oTrHXhgyEtk7IQZFqKNy2X9QTp8ZAODAHUFnvjCaWPCk5x5ekCg3A37Fa0Ifs9NcVtgcPyj9xjrnBNpSGDF6yCfm0sS5mAacnxUX-RcF3bCpvYXfbqt6HtPU"
+          />
+          <div
+            class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-white/40"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-white"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >local_mall</span
+              >
+            </div>
+            <div>
+              <p
+                class="text-xs font-bold text-on-surface-variant uppercase tracking-wider"
+              >
+                O dara! Popular Pick
+              </p>
+              <p class="text-lg font-bold text-primary">25kg Parboiled Rice</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Category Grid (Bento Style) -->
+      <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex justify-between items-end mb-12">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-primary">
+              Browse the Harvest
+            </h2>
+            <p class="text-on-surface-variant mt-2 font-medium">
+              Curated selections for every Nigerian home.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <!-- Large Card -->
+          <div
+            class="md:col-span-2 md:row-span-2 bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10 flex flex-col justify-between group cursor-pointer overflow-hidden relative"
+          >
+            <img
+              alt="Grains and tubers"
+              class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700"
+              data-alt="Overhead shot of bowls containing rice, beans, and yams"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhv4u0Pre7IbzDzoncIGC87En3d8DclkZzR4jKjGxjoJuCbCuikacPQEeSId8Of2PHdmodGCemg5qbo0dSFIo7KjJl-KB-6sgU5DNcwWZa4zXqNDLCRvbjallEJTZR6Vd4GVun4CDUMBF7rDgDuYy5B0r4cAedtVrPBRTLOUT5oW8utQDA9FFGh7HeMP7LAy4d_N5KRatQDTpmwYM1PLN8yOTrI8HxMrVirNxrooxscLP-xrjZMUlAwobqP_ZtE5QqR6yUwhmdCNI"
+            />
+            <div class="relative z-10">
+              <span
+                class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest"
+                >Essential</span
+              >
+              <h3 class="text-3xl font-extrabold text-primary mt-4">
+                Grains &amp; Tubers
+              </h3>
+              <p class="text-on-surface-variant mt-2 max-w-xs">
+                The foundation of every meal. Rice, Yam, Garri and more.
+              </p>
+            </div>
+            <div
+              class="relative z-10 mt-8 flex items-center gap-2 text-primary font-bold"
+            >
+              Shop Now
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </div>
+          <!-- Protein -->
+          <div
+            class="bg-secondary-fixed p-6 rounded-2xl shadow-sm flex flex-col justify-between group cursor-pointer h-64 overflow-hidden relative"
+          >
+            <img
+              alt="Fresh Proteins"
+              class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-110 transition-transform duration-700"
+              data-alt="Assorted poultry and fresh meat presentation"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr9fgE2TdUZzIo_1Qa2_NYkXe4m_XvqHIJV6yNRTD4IRE0u3zIef7fQzFiF2eaHWQeC5zT5ol2wwWGicPKMglXmS_24_BYryy6UpOPfaMCxjDrjeekS3z0Dq-U3ooDWc5VoAATUp7unjYB6rpo8A57AH5ErhE3HuM2atTlEEoNKNaBk4lduC8CCbkAdCW3WvnrT13KfztAVKXTzJKKImlAfasimiKWejfyPK2ePQPNKAAMYuhQOgXKZtXefX4ZIJPhPiwfENpgn_E"
+            />
+            <div class="relative z-10">
+              <h3 class="text-xl font-extrabold text-on-secondary-fixed">
+                Proteins
+              </h3>
+            </div>
+            <div class="relative z-10 flex items-center justify-between">
+              <span class="text-on-secondary-fixed font-medium"
+                >Beef, Poultry, Fish</span
+              >
+              <span class="material-symbols-outlined text-on-secondary-fixed"
+                >trending_flat</span
+              >
+            </div>
+          </div>
+          <!-- Oils & Spices -->
+          <div
+            class="bg-tertiary-fixed p-6 rounded-2xl shadow-sm flex flex-col justify-between group cursor-pointer h-64 overflow-hidden relative"
+          >
+            <img
+              alt="Spices and Oils"
+              class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:scale-110 transition-transform duration-700"
+              data-alt="Colorful array of peppers and vegetable oils"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNx0srmwedDL2HBmvlV9Wil6RssJTj_MGKCk-V9nxlJqSdU3ie-h443GkKnVd_anAPSmS_I_Nbwmr3QCGmTLkgl_nSDc0nYX7VkzbW5rll6t8XMCa3b4EhJDCz3xrZ609ororHeNUhYPalOgpk8PKiKwBaqjb9zkpUTlVPw4nDIiXzPTJPN_KpRcxdPevlZnOij25XpFIpkWjONWdTRtzWBMtPfjJ_tlFms8De187sPid2uM19tZaPGwBF9TYscMwE_5BiLOem95A"
+            />
+            <div class="relative z-10">
+              <h3 class="text-xl font-extrabold text-on-tertiary-fixed">
+                Oils &amp; Spices
+              </h3>
+            </div>
+            <div class="relative z-10 flex items-center justify-between">
+              <span class="text-on-tertiary-fixed font-medium"
+                >Palm Oil, Maggi, Pepper</span
+              >
+              <span class="material-symbols-outlined text-on-tertiary-fixed"
+                >trending_flat</span
+              >
+            </div>
+          </div>
+          <!-- Fresh Produce -->
+          <div
+            class="md:col-span-2 bg-primary-container p-8 rounded-2xl shadow-sm flex flex-col md:flex-row justify-between items-center gap-6 group cursor-pointer"
+          >
+            <div class="text-left flex-1">
+              <h3 class="text-2xl font-extrabold text-on-primary-container">
+                Fresh Produce
+              </h3>
+              <p class="text-on-primary-container/80 mt-2">
+                Farm-to-table vegetables and fruits delivered at peak freshness.
+              </p>
+              <button
+                class="mt-6 bg-surface-container-lowest text-primary px-6 py-2 rounded-xl font-bold"
+              >
+                Explore Market
+              </button>
+            </div>
+            <img
+              alt="Fresh Vegetables"
+              class="w-40 h-40 object-cover rounded-2xl shadow-lg rotate-3 group-hover:rotate-0 transition-transform"
+              data-alt="Bright green vegetables and vibrant tomatoes"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmcw5uuq6qHghau81QqFcV8xINNrWRVCMKmBVq-g6HRIgVY-FyuoW2a91ffJOs5p_Wkqo3fQfQmo4UgoWu2HYWNY5iFmISxdCjIIy3yQLGQasUb112WU4xapvN3X56PvO_067CV3dU4enx9Ox_Bmvbgm9bkwdhXvu3f6XOtFHpr1kNaRqiuGkEjm7RDpAu8sUWmL1Vs8N0IYKjLnjPl5BUtwiS-v8j17gAl_3-KxPEZu_xmjjktzu9C-ONDxD1iCQ5JJM1iA7eG0Q"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- How it Works -->
+      <section class="bg-surface-container-low py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+          <h2
+            class="text-3xl md:text-5xl font-extrabold text-primary mb-16 tracking-tight"
+          >
+            Your Journey from Field to Table
+          </h2>
+          <div class="grid md:grid-cols-3 gap-12 relative">
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center space-y-6 relative z-10">
+              <div
+                class="w-20 h-20 rounded-[2rem] bg-surface-container-lowest shadow-xl flex items-center justify-center rotate-6 group hover:rotate-0 transition-transform"
+              >
+                <span
+                  class="material-symbols-outlined text-4xl text-primary"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >shopping_basket</span
+                >
+              </div>
+              <div>
+                <h3 class="text-2xl font-extrabold text-primary mb-3">
+                  1. Shop Items
+                </h3>
+                <p class="text-on-surface-variant leading-relaxed">
+                  Fill your cart with premium groceries and essential staples
+                  from verified vendors.
+                </p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="flex flex-col items-center space-y-6 relative z-10">
+              <div
+                class="w-20 h-20 rounded-[2rem] bg-secondary-fixed shadow-xl flex items-center justify-center -rotate-6"
+              >
+                <span
+                  class="material-symbols-outlined text-4xl text-on-secondary-fixed"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >payments</span
+                >
+              </div>
+              <div>
+                <h3 class="text-2xl font-extrabold text-primary mb-3">
+                  2. Get Credit
+                </h3>
+                <p class="text-on-surface-variant leading-relaxed">
+                  Checkout with Ounje Credit. Instant approval for verified
+                  salary earners.
+                </p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center space-y-6 relative z-10">
+              <div
+                class="w-20 h-20 rounded-[2rem] bg-primary-container shadow-xl flex items-center justify-center rotate-3"
+              >
+                <span
+                  class="material-symbols-outlined text-4xl text-on-primary-container"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >event_repeat</span
+                >
+              </div>
+              <div>
+                <h3 class="text-2xl font-extrabold text-primary mb-3">
+                  3. Repay on Payday
+                </h3>
+                <p class="text-on-surface-variant leading-relaxed">
+                  Small, automated deductions when your salary arrives. Zero
+                  stress.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ Section (Inspiration from IMAGE_5) -->
+      <section class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-5 gap-16">
+          <!-- Left Sidebar Header -->
+          <div class="md:col-span-2">
+            <h2
+              class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-6"
+            >
+              Frequently Asked Questions
+            </h2>
+            <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+              Everything you need to know about the Ounje harvest credit system
+              and our farm-to-table delivery.
+            </p>
+            <div
+              class="bg-secondary-fixed p-6 rounded-2xl border border-secondary/20"
+            >
+              <p class="font-bold text-on-secondary-fixed">
+                Still have questions?
+              </p>
+              <p class="text-on-secondary-fixed/80 text-sm mt-1">
+                Chat with our harvest support team today.
+              </p>
+              <button
+                class="mt-4 bg-secondary text-white px-6 py-2 rounded-xl font-bold text-sm"
+              >
+                Contact Support
+              </button>
+            </div>
+          </div>
+          <!-- Accordion Column -->
+          <div class="md:col-span-3 space-y-4">
+            <!-- FAQ 1 -->
+            <div
+              class="faq-item group bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+            >
+              <input
+                checked=""
+                class="hidden"
+                id="faq-1"
+                name="faq-accordion"
+                type="radio"
+              />
+              <label
+                class="faq-header flex justify-between items-center p-6 cursor-pointer hover:bg-surface-container-low transition-all"
+                for="faq-1"
+              >
+                <span class="text-xl font-bold pr-4"
+                  >What is Ounje Credit?</span
+                >
+                <span
+                  class="expand-icon material-symbols-outlined w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low transition-all"
+                  >expand_more</span
+                >
+              </label>
+              <div
+                class="faq-content max-h-0 opacity-0 px-6 transition-all duration-300 ease-in-out"
+              >
+                <p class="text-on-surface-variant leading-relaxed">
+                  Ounje Credit is our specialized "Buy Now, Pay Later" solution
+                  designed exclusively for Nigerian salary earners. It allows
+                  you to purchase essential food staples and bulk groceries
+                  today, while spreading the payment until your next payday.
+                  It's our way of ensuring every home remains stocked without
+                  financial strain.
+                </p>
+              </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div
+              class="faq-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+            >
+              <input
+                class="hidden"
+                id="faq-2"
+                name="faq-accordion"
+                type="radio"
+              />
+              <label
+                class="faq-header flex justify-between items-center p-6 cursor-pointer hover:bg-surface-container-low transition-all"
+                for="faq-2"
+              >
+                <span class="text-xl font-bold pr-4"
+                  >How do I qualify for Ounje Credit?</span
+                >
+                <span
+                  class="expand-icon material-symbols-outlined w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low transition-all"
+                  >expand_more</span
+                >
+              </label>
+              <div
+                class="faq-content max-h-0 opacity-0 px-6 transition-all duration-300 ease-in-out"
+              >
+                <p class="text-on-surface-variant leading-relaxed">
+                  To qualify, you need to be a verified salary earner in
+                  Nigeria. During sign-up, you'll provide basic details like
+                  your work information and BVN. Our automated system verifies
+                  your status almost instantly, giving you a credit limit
+                  tailored to your income level.
+                </p>
+              </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div
+              class="faq-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+            >
+              <input
+                class="hidden"
+                id="faq-3"
+                name="faq-accordion"
+                type="radio"
+              />
+              <label
+                class="faq-header flex justify-between items-center p-6 cursor-pointer hover:bg-surface-container-low transition-all"
+                for="faq-3"
+              >
+                <span class="text-xl font-bold pr-4"
+                  >What are the repayment terms?</span
+                >
+                <span
+                  class="expand-icon material-symbols-outlined w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low transition-all"
+                  >expand_more</span
+                >
+              </label>
+              <div
+                class="faq-content max-h-0 opacity-0 px-6 transition-all duration-300 ease-in-out"
+              >
+                <p class="text-on-surface-variant leading-relaxed">
+                  Repayments are designed to be stress-free. Payments are
+                  typically deducted automatically from your account once your
+                  salary is credited. We offer transparent, flat-rate service
+                  fees with no hidden interest spikes, ensuring you know exactly
+                  what you're paying from day one.
+                </p>
+              </div>
+            </div>
+            <!-- FAQ 4 -->
+            <div
+              class="faq-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+            >
+              <input
+                class="hidden"
+                id="faq-4"
+                name="faq-accordion"
+                type="radio"
+              />
+              <label
+                class="faq-header flex justify-between items-center p-6 cursor-pointer hover:bg-surface-container-low transition-all"
+                for="faq-4"
+              >
+                <span class="text-xl font-bold pr-4"
+                  >What are the typical delivery times?</span
+                >
+                <span
+                  class="expand-icon material-symbols-outlined w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low transition-all"
+                  >expand_more</span
+                >
+              </label>
+              <div
+                class="faq-content max-h-0 opacity-0 px-6 transition-all duration-300 ease-in-out"
+              >
+                <p class="text-on-surface-variant leading-relaxed">
+                  We pride ourselves on "Harvest-Speed" delivery. For orders
+                  within major cities like Lagos, Abuja, and Port Harcourt, you
+                  can expect your delivery within 24 to 48 hours. Fresh produce
+                  is sourced and dispatched daily to ensure maximum shelf life
+                  in your pantry.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Social Proof / Testimonials -->
+      <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-primary">
+            Voices of the Harvest
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10"
+          >
+            <div class="flex gap-1 text-secondary mb-4">
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+            </div>
+            <p class="text-on-surface text-lg leading-relaxed italic mb-6">
+              "Ounje saved my family this month. With school fees and rent due,
+              the credit option meant we didn't have to compromise on food."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold"
+              >
+                AA
+              </div>
+              <div>
+                <p class="font-bold text-primary">Adesuwa A.</p>
+                <p class="text-sm text-on-surface-variant">
+                  Civil Servant, Lagos
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10"
+          >
+            <div class="flex gap-1 text-secondary mb-4">
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+            </div>
+            <p class="text-on-surface text-lg leading-relaxed italic mb-6">
+              "The delivery is so fast and the rice quality is premium. I love
+              that I can buy in bulk and pay slowly."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold"
+              >
+                CO
+              </div>
+              <div>
+                <p class="font-bold text-primary">Chinedu O.</p>
+                <p class="text-sm text-on-surface-variant">Banker, Abuja</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10"
+          >
+            <div class="flex gap-1 text-secondary mb-4">
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >star</span
+              >
+            </div>
+            <p class="text-on-surface text-lg leading-relaxed italic mb-6">
+              "Finally, a service that understands the Nigerian salary earner.
+              Transparent rates and great customer support."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold"
+              >
+                FT
+              </div>
+              <div>
+                <p class="font-bold text-primary">Fatima T.</p>
+                <p class="text-sm text-on-surface-variant">Educator, Kaduna</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Trust Badges -->
+        <div
+          class="mt-20 flex flex-wrap justify-center items-center gap-12 opacity-60"
+        >
+          <div
+            class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all"
+          >
+            <span class="material-symbols-outlined text-3xl"
+              >verified_user</span
+            >
+            <span class="font-bold">CBN Compliant</span>
+          </div>
+          <div
+            class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all"
+          >
+            <span class="material-symbols-outlined text-3xl">security</span>
+            <span class="font-bold">Bank-Grade Security</span>
+          </div>
+          <div
+            class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all"
+          >
+            <span class="material-symbols-outlined text-3xl"
+              >local_shipping</span
+            >
+            <span class="font-bold">Fast Home Delivery</span>
+          </div>
+        </div>
+      </section>
+      <!-- Download App Section: Your Pantry in Your Pocket -->
+      <section class="max-w-7xl mx-auto px-6 py-24">
+        <div
+          class="bg-surface-container-high rounded-[3rem] p-8 md:p-20 flex flex-col md:flex-row items-center gap-12 md:gap-24 relative overflow-hidden"
+        >
+          <!-- Decorative food icons in background -->
+          <div
+            class="absolute top-10 right-10 opacity-10 rotate-12 pointer-events-none"
+          >
+            <span class="material-symbols-outlined text-[120px] text-primary"
+              >agriculture</span
+            >
+          </div>
+          <div
+            class="absolute bottom-10 left-10 opacity-10 -rotate-12 pointer-events-none"
+          >
+            <span class="material-symbols-outlined text-[120px] text-primary"
+              >bakery_dining</span
+            >
+          </div>
+          <div class="flex-1 space-y-8 relative z-10">
+            <h2
+              class="text-4xl md:text-5xl font-extrabold text-primary leading-tight"
+            >
+              Your Pantry in Your Pocket.
+            </h2>
+            <p
+              class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-lg"
+            >
+              Manage your food credit, browse fresh farm harvests, and track
+              your deliveries directly from your phone. The Ounje app makes
+              eating well easier than ever.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <!-- App Store Badge -->
+              <a
+                class="h-[60px] flex items-center gap-3 bg-black text-white px-6 rounded-2xl hover:scale-[1.02] transition-transform shadow-xl"
+                href="#"
+              >
+                <img
+                  alt="App Store"
+                  class="w-8 h-8"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQwJqOhAwyFUdGXivXc0Iu4tKLPRMyKaVbZ4NP_R76OqP197JzSiAD7rGfen7is8L7M_cDmO9k94pz5lXMeHfzSW2OK43OHb0CBIH7b_alFH7KU1T7O8sKEfm9Mfn1IR1-fsQqO5gkrccpqzJmP_UVbO-jZiAEZCkztyyWJynka-uz3gWXE8DA2yfZksGDLJGwSNIB60b7MBAJikYz6acmTBVZTXeSvAAajTbeImiu6N_HyHjA5L6bXtciL7fajBpwbo1kqCHiqB8"
+                />
+                <div class="flex flex-col leading-none">
+                  <span class="text-[10px] uppercase font-medium opacity-80"
+                    >Download on the</span
+                  >
+                  <span class="text-xl font-bold">App Store</span>
+                </div>
+              </a>
+              <!-- Play Store Badge -->
+              <a
+                class="h-[60px] flex items-center gap-3 bg-black text-white px-6 rounded-2xl hover:scale-[1.02] transition-transform shadow-xl"
+                href="#"
+              >
+                <img
+                  alt="Google Play"
+                  class="w-8 h-8"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4yeelaxqJY-GE94kzKSMhtcQgdS-NXe41iUf_tNqwKt43hRn4rjyw6EKL-wMI_eTKTk_W9qhnLUzrFlKOCg7S0Djzvk92oxQYR-0IuZ4MXZF1KzXxfzp6tTpsGfP-q88P2LOE7j7A1TFpjI4ow8F6MINkEIUtwrF7x4l158NDE8HTOzh6nGQRRdslHykYZHNG4zN8Hruov5vyQKFxZcNT6H1qF-RvvDct0K_UUfo9zs5E-V3lq2VEc1YPax6AsQ8SxnVPItZD-Os"
+                />
+                <div class="flex flex-col leading-none">
+                  <span class="text-[10px] uppercase font-medium opacity-80"
+                    >Get it on</span
+                  >
+                  <span class="text-xl font-bold">Google Play</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="flex-1 relative">
+            <div
+              class="relative z-10 bg-primary-container p-4 rounded-[2.5rem] shadow-2xl rotate-3 max-w-[320px] mx-auto group hover:rotate-0 transition-transform duration-500"
+            >
+              <div
+                class="bg-surface-container-lowest rounded-[2rem] overflow-hidden aspect-[9/19] relative"
+              >
+                <img
+                  alt="App Screen"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH01p7Z_hT958fA7I4Gv3W2n2Bf-m8M5qXv6f9O8JkL3N1A_P8-Q7Y1w-4V5_X6z7t8_w9A0B1C2D3E4F5G6H7I8J9K0L1M2N3O4P5Q6R7S8T9U0V1W2X3Y4Z"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent flex flex-col justify-end p-6"
+                >
+                  <div
+                    class="bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg border border-white/40"
+                  >
+                    <p class="text-xs font-bold text-primary uppercase">
+                      Market Update
+                    </p>
+                    <p class="text-sm font-bold text-on-surface mt-1">
+                      New Yam Harvest Just Arrived! 🍠
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Floating element 1 -->
+            <div
+              class="absolute -top-6 -right-6 bg-secondary-container p-4 rounded-2xl shadow-xl z-20 -rotate-12"
+            >
+              <span class="material-symbols-outlined text-white text-3xl"
+                >notifications_active</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Final CTA -->
+      <section class="max-w-7xl mx-auto px-6 py-20">
+        <div
+          class="signature-gradient rounded-[2.5rem] p-8 md:p-16 text-center text-on-primary relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full -ml-32 -mb-32"
+          ></div>
+          <h2
+            class="text-4xl md:text-6xl font-extrabold mb-6 relative z-10 tracking-tight"
+          >
+            Start Your Harvest Today
+          </h2>
+          <p
+            class="text-xl md:text-2xl opacity-90 mb-12 max-w-2xl mx-auto relative z-10 leading-relaxed"
+          >
+            Join thousands of Nigerians stocking their homes with ease. Your
+            pantry deserves the best.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center relative z-10"
+          >
+            <button
+              class="bg-secondary text-white h-[64px] px-12 rounded-2xl font-extrabold text-xl shadow-xl hover:scale-105 transition-transform"
+            >
+              Create Free Account
+            </button>
+            <button
+              class="bg-white/10 backdrop-blur-md border border-white/30 text-white h-[64px] px-12 rounded-2xl font-bold text-xl hover:bg-white/20 transition-colors"
+            >
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full rounded-t-[2rem] mt-12 bg-[#daedda]">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-6 max-w-7xl mx-auto"
+      >
+        <div class="flex flex-col items-center md:items-start gap-2">
+          <span class="text-xl font-bold text-[#004317]">Ounje</span>
+          <p class="text-[#40493f] text-sm text-center md:text-left">
+            © 2024 Ounje Credit Marketplace. All rights reserved.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a
+            class="text-sm font-medium text-[#40493f] hover:text-[#904d00] transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="text-sm font-medium text-[#40493f] hover:text-[#904d00] transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-sm font-medium text-[#40493f] hover:text-[#904d00] transition-colors"
+            href="#"
+            >Support</a
+          >
+          <a
+            class="text-sm font-medium text-[#40493f] hover:text-[#904d00] transition-colors"
+            href="#"
+            >Contact Us</a
+          >
+          <a
+            class="text-sm font-medium text-[#40493f] hover:text-[#904d00] transition-colors"
+            href="#"
+            >FAQ</a
+          >
+        </div>
+        <div class="flex gap-4">
+          <a
+            class="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-all"
+            href="#"
+          >
+            <span class="material-symbols-outlined">public</span>
+          </a>
+          <a
+            class="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-all"
+            href="#"
+          >
+            <span class="material-symbols-outlined">share</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
