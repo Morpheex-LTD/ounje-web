@@ -1,8 +1,8 @@
 "use client";
 
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 export function HeroSection() {
   return (
@@ -11,7 +11,7 @@ export function HeroSection() {
         src="/images/hero-illustration-main.png"
         alt="Ounje hero illustration"
         fill
-        className="object-cover object-bottom"
+        className="object-cover object-top after:absolute after:inset-0 after:bg-background/50 after:z-0"
         priority
         unoptimized
       />

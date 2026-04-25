@@ -65,17 +65,17 @@ export function Testimonials() {
 
       <StaggerContainer className="grid md:grid-cols-3 gap-8">
         {testimonials.map((t) => (
-          <StaggerItem key={t.name}>
-            <Card className="bg-card border-border/10 shadow-sm rounded-2xl">
-              <CardContent className="pt-8">
+          <StaggerItem key={t.name} className="h-full">
+            <Card className="bg-card border-border/10 shadow-sm rounded-2xl h-full flex flex-col">
+              <CardContent className="pt-8 flex-1 flex flex-col">
                 <StarRating />
-                <p className="text-foreground text-lg leading-relaxed italic">
+                <p className="text-foreground text-lg leading-relaxed italic flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </p>
               </CardContent>
-              <CardFooter className="bg-transparent border-0 px-4 pb-8">
+              <CardFooter className="bg-transparent border-0 px-4 pb-8 mt-auto">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold shrink-0">
                     {t.initials}
                   </div>
                   <div>
